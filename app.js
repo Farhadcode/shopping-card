@@ -28,12 +28,19 @@ function calculateTotal() {
     const phoneTotal = productPrice('phone-number', 1219) ;
     const caseTotal =  productPrice('case-number',59);
     const subTotal = phoneTotal + caseTotal ;
+    const tax = subTotal / 10;
+    const totalPrice = subTotal + tax ;
+
     // console.log(subTotal);
 
     // update sub total in webpage
 
     document.getElementById('sub-total').innerText = subTotal ;
+    document.getElementById('tax-amonut').innerText = tax ;
+    document.getElementById('total-price').innerText = totalPrice;
 }
+
+
  // phone 
 document.getElementById('phone-plus-btn').addEventListener('click',addProductFuntion =() =>{
   getProductNumber('phone-number','phone-price',1219, true);
