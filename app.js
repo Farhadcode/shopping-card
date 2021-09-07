@@ -28,7 +28,18 @@ function calculateTotal() {
     const phoneTotal = productPrice('phone-number', 1219) ;
     const caseTotal =  productPrice('case-number',59);
     const subTotal = phoneTotal + caseTotal ;
-    const tax = subTotal / 10;
+
+    // tax calculate
+
+    if (subTotal < 1500) {
+        tax = (subTotal *10) / 100 ;
+      
+     
+    }
+     else {
+        tax = (subTotal *15) / 100 ;
+    };
+    
     const totalPrice = subTotal + tax ;
 
     // console.log(subTotal);
